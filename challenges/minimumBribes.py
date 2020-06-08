@@ -1,4 +1,3 @@
-
 import math
 import os
 import random
@@ -8,13 +7,13 @@ import sys
 
 def minimumBribes(q):
     bribes = 0
-    q = [x-1 for x in q]
-    #print({i:n for i, n in enumerate(q, start=1)})
+    q = [x - 1 for x in q]
+    # print({i:n for i, n in enumerate(q, start=1)})
     for i, n in enumerate(q):
-        if n-i > 2:
-            return("Too chaotic")
-        
-        for j in range(max(0, n-1), i):
+        if n - i > 2:
+            return "Too chaotic"
+
+        for j in range(max(0, n - 1), i):
             if q[j] > n:
                 bribes += 1
     return bribes
@@ -22,13 +21,13 @@ def minimumBribes(q):
 
 def print_minimumBribes(q):
     bribes = 0
-    q = [x-1 for x in q]
+    q = [x - 1 for x in q]
     for i, n in enumerate(q):
-        if n-i > 2:
+        if n - i > 2:
             print("Too chaotic")
             return
 
-        for j in range(max(0, n-1), i):
+        for j in range(max(0, n - 1), i):
             if q[j] > n:
                 bribes += 1
     print(bribes)

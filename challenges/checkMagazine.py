@@ -1,5 +1,6 @@
 from collections import Counter
 
+
 def checkMagazine(magazine, note):
     # can_replicate = set(note).issubset(set(magazine))
 
