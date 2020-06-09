@@ -1,21 +1,30 @@
-from challenges.hourglassSum import hourglassSum, read_from_file
+from challenges.hourglassSum import hourglassSum
 import pytest
-import os
+import numpy as np
 
-inputs = [
-    read_from_file(os.path.join("tests/2d-array-testcases/input", fp))
-    for fp in os.listdir("tests/2d-array-testcases/input")
+tests = [
+    (np.array([[-9, -9, -9, 1, 1, 1],
+      [0, -9, 0, 4, 3, 2],
+      [-9, -9, -9, 1, 2, 3],
+      [0, 0, 8, 6, 6, 0],
+      [0, 0, 0, -2, 0, 0],
+      [0, 0, 1, 2, 4, 0]]), 28),
+
+      (np.array([[1, 1, 1, 0, 0, 0],
+       [0, 1, 0, 0, 0, 0],
+       [1, 1, 1, 0, 0, 0],
+       [0, 9, 2, -4, -4, 0],
+       [0, 0, 0, -2, 0, 0],
+       [0, 0, -1, -2, -4, 0]]), 13),
+
+      (np.array([[1, 1, 1, 0, 0, 0],
+       [0, 1, 0, 0, 0, 0],
+       [1, 1, 1, 0, 0, 0],
+       [0, 0, 2, 4, 4, 0],
+       [0, 0, 0, 2, 0, 0],
+       [0, 0, 1, 2, 4, 0]]), 19)
+
 ]
-outputs = [
-    read_from_file(os.path.join("tests/2d-array-testcases/output", fp))
-    for fp in os.listdir("tests/2d-array-testcases/output")
-]
-
-assert len(inputs) == len(outputs)
-
-tests = list(zip(inputs, outputs))
-print(tests)
-
 
 @pytest.mark.parametrize("input, expected", tests)
 def test_hourglassSum(input, expected):
