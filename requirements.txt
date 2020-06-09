@@ -1,3 +1,5 @@
 black
 pytest
 numpy
+pre-commit
+docopt
