@@ -12,5 +12,5 @@ tests = [
 
 
 @pytest.mark.parametrize("input, expected", tests)
-def test_hourglassSum(input, expected):
+def test_minimumBribes(input, expected):
     assert minimumBribes(input) == expected
